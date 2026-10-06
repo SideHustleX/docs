@@ -1,0 +1,33 @@
+---
+title: "Subscribers"
+description: "Find who signed up, read statuses, export a CSV, and check growth on the home dashboard."
+keywords: ["subscriber", "export", "Waiting", "Notified"]
+icon: "users"
+---
+
+Open **Subscribers** to see who asked for an alert. Search by name, email, or product. Filter by status.
+
+<Frame>
+  ![Subscribers table with status filters and Export CSV](/images/notify-me/subscribers-table.png)
+</Frame>
+
+## Statuses
+
+| Status | Meaning |
+| --- | --- |
+| Waiting | Signed up. No alert sent yet. |
+| Notified | The alert left. Not opened yet. |
+| Opened | They opened the email and did not follow the product link. |
+| Clicked | They opened the product link. |
+| Bounced | The mail provider rejected the address. Further alerts to that subscriber stop. A high bounce rate hurts inbox placement. See [Deliverability best practices](/notify-me/sending-domain/deliverability). |
+| Unsubscribed | They opted out. Nothing more is sent. |
+
+If a shopper tries to subscribe again while they are still **Waiting** on that variant, the popup tells them they are already registered.
+
+## Export CSV
+
+Choose **Export CSV**. If the result is under 1,000 rows, the file downloads in the browser. If it is 1,000 rows or more, Notify Me emails the CSV to your Shopify contact email instead.
+
+<Note>
+  The home dashboard also shows **Revenue** and **Subscriber growth** for a date range you pick. Revenue is from orders that match notified subscribers.
+</Note>

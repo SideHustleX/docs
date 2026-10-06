@@ -1,0 +1,50 @@
+---
+title: "Edit alert emails"
+description: "Change the subject, preview text, and design of back-in-stock and price drop emails."
+keywords: ["automation", "email", "merge tags", "alert"]
+icon: "mail"
+---
+
+Each widget has a matching **automation**: **Back in stock** and **Price drop alert**. Open **Automations**, choose **Customize**, then edit the email step.
+
+<Frame>
+  ![Automation flow with Trigger and Email steps](/images/notify-me/automation-flow.png)
+</Frame>
+
+<Steps>
+  <Step title="Open the automation">
+    Go to **Automations** and choose **Customize** on Back in stock or Price drop alert.
+  </Step>
+  <Step title="Set subject and preview text">
+    Edit **Subject line** and **Preview text**, then save.
+  </Step>
+  <Step title="Edit the design">
+    On the email step, choose **Edit** to open the designer. Insert merge tags, then save.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Alert email designer with merge tags](/images/notify-me/email-designer.png)
+</Frame>
+
+## Merge tags
+
+| Tag | Inserts |
+| --- | --- |
+| `{{store_name}}` | Your shop name |
+| `{{first_name}}` | Subscriber first name (or "there" if missing) |
+| `{{last_name}}` | Subscriber last name |
+| `{{product_title}}` | Product title |
+| `{{variant_title}}` | Variant title |
+| `{{product_price}}` | Product price |
+| `{{product_url}}` | Link to the product |
+| `{{product_image}}` | Product image |
+
+Default subjects:
+
+- Back in stock: `Good news — your item is back in stock`
+- Price drop: `Price drop alert — your watched item just got cheaper`
+
+The app sends these emails. Connecting Klaviyo or another ESP does **not** send the Notify Me alert. See [Integrations](/notify-me/integrations).
+
+For bounce, open, and click hygiene after you send, see [Deliverability best practices](/notify-me/sending-domain/deliverability).

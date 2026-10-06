@@ -1,0 +1,42 @@
+---
+title: "The Notify me button is missing"
+sidebarTitle: "Button not showing"
+description: "Why the Notify me trigger does not appear, and how to fix it."
+keywords: ["button not showing", "app embed", "widget", "trigger"]
+icon: "eye-off"
+---
+
+The trigger only loads when the **app embed** is on, the **widget** is **ON** and **Published**, and the product matches your display rules.
+
+<AccordionGroup>
+  <Accordion title="The app embed is Off">
+    **Cause:** The embed is not enabled on the published theme.
+
+    **Fix:** On the home dashboard, choose **Enable**, turn on **Notify Me — Back in stock**, save the theme, then **Refresh status**. See [Enable the app embed](/notify-me/enable-app-embed).
+  </Accordion>
+  <Accordion title="The widget is Off or still a draft">
+    **Cause:** The knob is **OFF**, or you saved without **Publish**.
+
+    **Fix:** Go to **Widgets**, turn the widget **ON**, choose **Customize**, then **Publish**.
+  </Accordion>
+  <Accordion title="The variant is in stock">
+    **Cause:** Back in stock hides the trigger when the variant is available, unless you turned on continue-selling-at-zero display.
+
+    **Fix:** Check a sold-out variant, or turn on **Show button when shoppers can still buy at zero stock** if those products stay purchasable at 0. See [Back in stock widget](/notify-me/back-in-stock-widget).
+  </Accordion>
+  <Accordion title="Product targeting excludes this product">
+    **Cause:** Includes or excludes hide the widget on this product or collection.
+
+    **Fix:** In **Customize** → **Trigger**, widen **Products & collections** or clear excludes.
+  </Accordion>
+  <Accordion title="The theme layout hides the button">
+    **Cause:** The trigger sits below buy buttons, or listing pages are off.
+
+    **Fix:** Turn on **Replace Sold Out button with Notify Me** (inline trigger), or **Show on collection, search & product listing pages**.
+  </Accordion>
+  <Accordion title="You enabled the embed on a draft theme">
+    **Cause:** Shoppers see the published theme, not the unpublished one.
+
+    **Fix:** Enable the embed on the **published** theme, then **Refresh status**.
+  </Accordion>
+</AccordionGroup>

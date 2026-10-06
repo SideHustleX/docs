@@ -1,0 +1,71 @@
+---
+title: "Introduction"
+sidebarTitle: "Introduction"
+description: "Send restock and price drop alerts from your own domain instead of the Notify Me default sender."
+keywords: ["sending domain", "custom domain", "DKIM", "DNS", "sender"]
+icon: "globe"
+---
+
+A custom sending domain lets alerts come from your brand, for example `alerts@yourstore.com`, instead of `alerts@notify.hustlepops.com`. Notify Me still sends the email. You add DNS records so inboxes can trust the domain.
+
+<Warning>
+  You cannot change the sender email until the domain is verified. Until then, alerts keep using the default Notify Me sender.
+</Warning>
+
+## Where to find it
+
+Open **Settings** in the Notify Me left nav. The email section has **Sent from Name**, **Add a custom domain**, and **View DNS records** after you register a domain.
+
+<Frame>
+  ![Settings email section with sender name and custom domain](/images/notify-me/settings-email.png)
+</Frame>
+
+Enter the domain only (for example `yourstore.com`). Do not enter an email address, URL, or `www`.
+
+<Note>
+  Shopify development stores cannot register a custom domain or send alert emails.
+</Note>
+
+## How it works
+
+1. You register the domain in **Settings**.
+2. You add a DKIM **TXT** record and a bounce **CNAME** at your domain provider.
+3. You choose **Check verification** until the domain is verified.
+4. You set **Sent from Name** and the local part of the sender email.
+
+<Frame>
+  ![DNS records modal with DKIM and bounce CNAME](/images/notify-me/dns-records.png)
+</Frame>
+
+## Set up your domain
+
+<Steps>
+  <Step title="Register the domain">
+    Follow [Add a custom domain](/notify-me/sending-domain/add-domain) to register, verify, and set the sender.
+  </Step>
+  <Step title="Add DNS records">
+    Copy Host and Value from **View DNS records**, then follow your provider: [Cloudflare, GoDaddy, Shopify, and more](/notify-me/sending-domain/dns-providers).
+  </Step>
+  <Step title="If Register domain fails">
+    Error **DE_150** means the anti-spam check rejected the domain. See [DE_150 anti-spam check](/notify-me/sending-domain/de-150).
+  </Step>
+</Steps>
+
+## DE_150 anti-spam check {#de_150-anti-spam-check}
+
+If **Register domain** returns **DE_150**, DNS records will not appear. Email [support@oneclickez.com](mailto:support@oneclickez.com) with the domain. Full steps: [DE_150 anti-spam check](/notify-me/sending-domain/de-150).
+
+<Columns cols={2}>
+  <Card title="Add a custom domain" icon="globe" href="/notify-me/sending-domain/add-domain" arrow>
+    Register, verify, and set the sender.
+  </Card>
+  <Card title="DNS providers" icon="server" href="/notify-me/sending-domain/dns-providers" arrow>
+    Cloudflare, GoDaddy, Shopify, and more.
+  </Card>
+  <Card title="DE_150 anti-spam check" icon="shield-alert" href="/notify-me/sending-domain/de-150" arrow>
+    Register domain failed. Contact support.
+  </Card>
+  <Card title="Deliverability" icon="shield-check" href="/notify-me/sending-domain/deliverability" arrow>
+    Bounces, opens, clicks, and authentication.
+  </Card>
+</Columns>

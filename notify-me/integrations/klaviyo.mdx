@@ -1,0 +1,74 @@
+---
+title: "Klaviyo"
+description: "Create a Klaviyo private API key and connect it in Notify Me."
+keywords: ["Klaviyo", "API key", "integrations", "list"]
+icon: "mail"
+---
+
+Klaviyo receives each **subscriber** as a profile on the list you pick, plus a join event and a **Back in Stock** or **Price Drop** event after Notify Me sends the alert.
+
+<Warning>
+  Notify Me still sends the alert email. Klaviyo does not send it for you.
+</Warning>
+
+## Create an API key
+
+Do this in Klaviyo, then paste the key into Notify Me.
+
+<Steps>
+  <Step title="Open API keys">
+    In [Klaviyo](https://www.klaviyo.com), select your organization name in the lower left, then **Settings** → **API keys**.
+
+    <Frame>
+      ![Klaviyo Settings API keys page with Private API Keys](/images/notify-me/klaviyo-settings-api-keys.png)
+    </Frame>
+  </Step>
+  <Step title="Create a private API key">
+    Under **Private API Keys**, choose **Create Private API Key**. Name it `Notify Me`.
+
+    Choose **Custom** access. Give **Write** (full) access to **Lists**, **Profiles**, and **Events**. You can also give **Write** on **Subscriptions** so Notify Me can add the profile to your list.
+
+    <Frame>
+      ![Klaviyo create private API key with custom Lists, Profiles, and Events scopes](/images/notify-me/klaviyo-create-private-key.png)
+    </Frame>
+  </Step>
+  <Step title="Copy the key">
+    Choose **Create**. Copy the key now. Klaviyo will not show it again. See [Klaviyo: create a private API key](https://help.klaviyo.com/hc/en-us/articles/7423954176283).
+  </Step>
+</Steps>
+
+## Connect in Notify Me
+
+<Steps>
+  <Step title="Open Integrations">
+    In Notify Me, choose **Integrations** in the left nav, then **Connect** on Klaviyo.
+  </Step>
+  <Step title="Paste the key and test">
+    Paste the private API key and choose **Test**. When the test succeeds, pick the **List**.
+
+    <Frame>
+      ![Notify Me Connect Klaviyo modal with API key, Test, and List](/images/notify-me/integrations-connect-modal.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Choose **Save**. The Klaviyo card shows **Active**.
+  </Step>
+</Steps>
+
+## What syncs
+
+| When | Klaviyo metric |
+| --- | --- |
+| Shopper becomes a subscriber | `Waitlist Joined` |
+| Notify Me sends a restock alert | `Back in Stock` |
+| Notify Me sends a price drop alert | `Price Drop` |
+
+Use those metric names in a Klaviyo flow. The profile also gets product properties such as title, URL, and variant.
+
+## Pause or disconnect
+
+Choose **Manage** on the Klaviyo card.
+
+- Turn off **Sync waitlist signups and alert events** to pause without removing the key. The badge shows **Inactive**.
+- Paste a new key and **Test** to replace the current key.
+- Choose **Disconnect** to remove the connection.

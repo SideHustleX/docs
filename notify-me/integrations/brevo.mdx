@@ -1,0 +1,74 @@
+---
+title: "Brevo"
+description: "Create a Brevo API key and connect it in Notify Me."
+keywords: ["Brevo", "API key", "integrations", "list"]
+icon: "megaphone"
+---
+
+Brevo receives each **subscriber** as a contact on the list you pick, plus join and alert events after Notify Me sends the email.
+
+<Warning>
+  Notify Me still sends the alert email. Brevo does not send it for you.
+</Warning>
+
+## Create an API key
+
+Do this in Brevo, then paste the key into Notify Me. Use an **API key**, not an SMTP key.
+
+<Steps>
+  <Step title="Open API keys">
+    In [Brevo](https://www.brevo.com), open your account menu, then **Settings** → **SMTP & API** → **API Keys & MCP**.
+
+    <Frame>
+      ![Brevo SMTP and API keys page](/images/notify-me/brevo-smtp-api-keys.png)
+    </Frame>
+  </Step>
+  <Step title="Generate a new API key">
+    Choose **Generate a new API key**. Complete identity verification if Brevo asks. Name it `Notify Me`. Set an expiry you can remember, or no expiration.
+
+    Leave **Create MCP server API key** off. That option replaces the key Notify Me needs.
+
+    <Frame>
+      ![Brevo generate a new API key dialog](/images/notify-me/brevo-generate-api-key.png)
+    </Frame>
+  </Step>
+  <Step title="Copy the key">
+    Choose **Generate**, copy the key, then **OK**. Brevo will not show it again. See [Brevo: create and manage API keys](https://help.brevo.com/hc/en-us/articles/209467485-Create-and-manage-your-API-keys).
+  </Step>
+</Steps>
+
+## Connect in Notify Me
+
+<Steps>
+  <Step title="Open Integrations">
+    In Notify Me, choose **Integrations** in the left nav, then **Connect** on Brevo.
+  </Step>
+  <Step title="Paste the key and test">
+    Paste the API key and choose **Test**. When the test succeeds, pick the **List**.
+
+    <Frame>
+      ![Notify Me Connect Brevo modal with API key, Test, and List](/images/notify-me/integrations-connect-modal.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Choose **Save**. The Brevo card shows **Active**.
+  </Step>
+</Steps>
+
+## What syncs
+
+| When | Brevo event |
+| --- | --- |
+| Shopper becomes a subscriber | `waitlist_joined` |
+| Notify Me sends a restock alert | `back_in_stock` |
+| Notify Me sends a price drop alert | `price_drop` |
+
+Use those event names in a Brevo automation. The contact also gets product properties such as title, URL, and variant.
+
+## Pause or disconnect
+
+Choose **Manage** on the Brevo card.
+
+- Turn off **Sync waitlist signups and alert events** to pause without removing the key. The badge shows **Inactive**.
+- Paste a new key and **Test** to replace the current key.
+- Choose **Disconnect** to remove the connection.

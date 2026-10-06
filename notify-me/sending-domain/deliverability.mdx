@@ -1,0 +1,77 @@
+---
+title: "Deliverability best practices"
+description: "Keep restock and price drop alerts out of spam: bounces, opens, clicks, and domain checks."
+keywords: ["deliverability", "bounce", "open", "click", "spam", "DKIM"]
+icon: "shield-check"
+---
+
+Notify Me only emails people who submitted the **popup**. Inbox providers still score those alerts on bounces, opens, clicks, and whether your domain is authenticated.
+
+<Frame>
+  ![Subscribers table with Sent, Opened, Clicked, and Bounced statuses](/images/notify-me/subscribers-table.png)
+</Frame>
+
+## What the statuses mean
+
+Open **Subscribers** after alerts go out. Filter by status to see how inboxes treated them.
+
+| Status | What happened |
+| --- | --- |
+| Notified | The alert left. Not opened yet. |
+| Opened | They opened the email and did not follow the product link. |
+| Clicked | They opened the product link. |
+| Bounced | The mailbox rejected the address. Further alerts to that subscriber stop. |
+
+The **Notification usage** meter on [Settings](/notify-me/settings) counts alerts that were sent, opened, clicked, or bounced.
+
+<Tip>
+  High **Clicked** is a good sign. A growing **Bounced** list is the first thing to fix. Inbox providers treat a high bounce rate as spam risk and can start sending later alerts to junk.
+</Tip>
+
+## Keep bounce rate low
+
+A bounce means the address cannot receive mail (typo, closed mailbox, or the provider blocked the message).
+
+- Filter **Subscribers** by **Bounced**. Do not expect another alert to that address.
+- Ask the shopper to subscribe again with a working email.
+- Add the bounce **CNAME** from [Add a custom domain](/notify-me/sending-domain/add-domain) so Notify Me can record bounces. Without it, bounced rows can lag or stay as Notified.
+- Do not paste purchased or old lists into the store and expect Notify Me to email them. Only popup signups should get alerts.
+
+A useful rule of thumb: keep bounced alerts well under **2%** of what you send. If bounces spike after a campaign of restocks, pause and clean the **Bounced** filter before the next wave.
+
+## Opens and clicks
+
+Opens mean the email arrived and someone viewed it. Clicks mean they followed `{{product_url}}` back to the product.
+
+- Use a subject and preview that name the product. Default subjects already do this. See [Edit alert emails](/notify-me/edit-alert-emails).
+- Keep one clear product link. Extra links and tracking URLs lower trust.
+- Match **Sent from Name** to your store. A random name next to the product title looks like phishing.
+- Send from a verified [custom domain](/notify-me/sending-domain/add-domain) once DNS is done, so the From address matches your brand.
+
+Opens can under-count when the shopper's mail app blocks images. Clicks are the more reliable engagement signal.
+
+## Authentication
+
+Inbox providers check that you are allowed to send as that domain.
+
+1. Register the domain in **Settings**.
+2. Add the DKIM **TXT** record and the bounce **CNAME**. See [Add DNS records](/notify-me/sending-domain/dns-providers) for Cloudflare, GoDaddy, Shopify, and other providers.
+3. Choose **Check verification** until the domain is verified.
+4. Save **Sent from Name** and the local part of the sender email.
+
+Until the domain is verified, alerts keep using `alerts@notify.hustlepops.com`.
+
+<Warning>
+  If **Register domain** fails with **DE_150** — *Antispam validation failed for your domain in Accounts* — the domain failed the anti-spam check. You cannot add DNS records until this is cleared. Email [support@oneclickez.com](mailto:support@oneclickez.com) with the domain. See [DE_150 anti-spam check](/notify-me/sending-domain/de-150).
+</Warning>
+
+## Writing the alert
+
+These emails are expected (the shopper asked for them), but copy still affects spam filters.
+
+- Say what happened: the item is back, or the price dropped.
+- Put the product title in the subject. Avoid ALL CAPS, extra punctuation, and words like “free!!!”, “act now”, or “winner”.
+- Use merge tags for the real product, price, and link. Do not paste a different URL than `{{product_url}}`.
+- Keep the design simple. A product image, short body, and one button outperform busy templates.
+
+The app sends these alerts. Connecting Klaviyo or another ESP does not send the Notify Me email. See [Integrations](/notify-me/integrations).

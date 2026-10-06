@@ -1,0 +1,72 @@
+---
+title: "Omnisend"
+description: "Create an Omnisend API key and connect it in Notify Me."
+keywords: ["Omnisend", "API key", "integrations", "tag"]
+icon: "send"
+---
+
+Omnisend receives each **subscriber** as a contact with the tag you pick, plus join and alert events after Notify Me sends the email.
+
+<Warning>
+  Notify Me still sends the alert email. Omnisend does not send it for you.
+</Warning>
+
+## Create an API key
+
+Do this in Omnisend, then paste the key into Notify Me.
+
+<Steps>
+  <Step title="Open API keys">
+    In [Omnisend](https://www.omnisend.com), go to **Store settings** → **API keys** (or **Integrations & API** → **API keys**).
+
+    <Frame>
+      ![Omnisend Store settings API keys page](/images/notify-me/omnisend-store-settings-api-keys.png)
+    </Frame>
+  </Step>
+  <Step title="Create a key">
+    Choose **Create API key**. Name it `Notify Me`. Turn on **Contacts** and **Events**. Leave other permissions off unless you need them.
+
+    <Frame>
+      ![Omnisend create API key with Contacts and Events permissions](/images/notify-me/omnisend-create-api-key.png)
+    </Frame>
+  </Step>
+  <Step title="Copy the key">
+    Choose **Create API key**, then copy it. Omnisend will not show it again. See [Omnisend: generate an API key](https://support.omnisend.com/en/articles/1061890-generate-an-api-key-in-omnisend).
+  </Step>
+</Steps>
+
+## Connect in Notify Me
+
+<Steps>
+  <Step title="Open Integrations">
+    In Notify Me, choose **Integrations** in the left nav, then **Connect** on Omnisend.
+  </Step>
+  <Step title="Paste the key and test">
+    Paste the API key and choose **Test**. When the test succeeds, pick the **Tag**. New contacts get that tag.
+
+    <Frame>
+      ![Notify Me Connect Omnisend modal with API key, Test, and Tag](/images/notify-me/integrations-connect-modal.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Choose **Save**. The Omnisend card shows **Active**.
+  </Step>
+</Steps>
+
+## What syncs
+
+| When | Omnisend event |
+| --- | --- |
+| Shopper becomes a subscriber | `Waitlist Joined` |
+| Notify Me sends a restock alert | `Back in Stock` |
+| Notify Me sends a price drop alert | `Price Drop` |
+
+Use those events in an Omnisend automation. The contact also gets product properties such as title, URL, and variant.
+
+## Pause or disconnect
+
+Choose **Manage** on the Omnisend card.
+
+- Turn off **Sync waitlist signups and alert events** to pause without removing the key. The badge shows **Inactive**.
+- Paste a new key and **Test** to replace the current key.
+- Choose **Disconnect** to remove the connection.

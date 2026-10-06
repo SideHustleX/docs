@@ -1,0 +1,35 @@
+---
+title: "When alerts send"
+description: "When Notify Me sends back-in-stock and price drop alerts."
+keywords: ["alert", "back in stock", "price drop", "inventory"]
+icon: "zap"
+---
+
+Notify Me sends an **alert** only to **Waiting** subscribers on that variant. If nobody subscribed, restocking or lowering the price does nothing.
+
+<Warning>
+  Check **Subscribers** for a **Waiting** row on that product and variant before you look for a missing email.
+</Warning>
+
+<Tabs>
+  <Tab title="Back in stock">
+    Notify Me sends the restock alert when Shopify restocks a variant that has Waiting subscribers, **and** all of these are true:
+
+    - The product is **Active** (not draft or archived)
+    - Quantity is greater than 0
+    - Quantity meets **Minimum stock before sending alerts** (or that value is 0)
+    - Quantity tracking is on, unless you enabled **Send alerts for products that do not track quantity**
+    - If the product **continues selling at zero stock**, you enabled **Send alerts for products that allow buying at zero stock**
+
+    Subscribers then move to **Notified**. See [Back in stock widget](/notify-me/back-in-stock-widget) to change inventory rules.
+  </Tab>
+  <Tab title="Price drop">
+    Notify Me sends the price drop alert when the variant's price is **strictly lower** than the price stored at signup, and at least one subscriber is **Waiting** on that variant.
+
+    Setting compare-at, changing a sale badge, or raising the price does not send the alert. Emails still skip draft or archived products and missing sender settings. See [Price drop widget](/notify-me/price-drop-widget).
+  </Tab>
+</Tabs>
+
+<Note>
+  Shopify development stores cannot send alert emails. You will still see subscribers in the app.
+</Note>

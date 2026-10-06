@@ -1,0 +1,29 @@
+---
+title: "DE_150 anti-spam check"
+sidebarTitle: "DE_150"
+description: "What to do when Register domain returns DE_150 antispam validation failed."
+keywords: ["DE_150", "antispam", "custom domain", "Register domain"]
+icon: "shield-alert"
+---
+
+When you choose **Register domain** in **Settings**, you may see error **DE_150**:
+
+> Antispam validation failed for your domain in Accounts.
+
+That means the sending provider rejected the domain during its anti-spam check. DNS records will not appear. You cannot finish custom domain setup until this is cleared.
+
+## What to send support
+
+Email [support@oneclickez.com](mailto:support@oneclickez.com) with the **domain** you tried to add. The domain only is enough.
+
+Until support clears it:
+
+- Leave the default sender in place.
+- Do not keep retrying the same domain.
+- Alerts still send from `alerts@notify.hustlepops.com`.
+
+<Note>
+  Shopify development stores cannot register a custom domain. That is a different limit, not DE_150.
+</Note>
+
+After the domain is allowed, return to [Add a custom domain](/notify-me/sending-domain/add-domain) and finish DNS plus **Check verification**.

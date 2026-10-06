@@ -1,55 +1,157 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "OneClickEZ",
+  "description": "Help for OneClick EZ Shopify apps.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7A39DD",
+    "light": "#AD74FF",
+    "dark": "#3F0082"
   },
-  "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "favicon": "/favicon.png",
+  "icons": {
+    "library": "lucide"
+  },
   "navigation": {
-    "pages": [
+    "products": [
       {
-        "group": "Getting Started",
+        "product": "All apps",
+        "description": "OneClickEZ help",
+        "icon": "house",
         "pages": [
-          "index",
-          "quickstart"
+          "index"
+        ]
+      },
+      {
+        "product": "Notify Me",
+        "description": "Back in stock and price drop alerts",
+        "icon": "bell",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "notify-me/index",
+              "notify-me/install"
+            ]
+          },
+          {
+            "group": "Storefront",
+            "pages": [
+              "notify-me/enable-app-embed",
+              "notify-me/widgets",
+              "notify-me/back-in-stock-widget",
+              "notify-me/price-drop-widget",
+              "notify-me/popup"
+            ]
+          },
+          {
+            "group": "Alerts and email",
+            "pages": [
+              "notify-me/when-alerts-send",
+              "notify-me/edit-alert-emails"
+            ]
+          },
+          {
+            "group": "Sending domain",
+            "pages": [
+              "notify-me/sending-domain",
+              "notify-me/sending-domain/add-domain",
+              "notify-me/sending-domain/dns-providers",
+              "notify-me/sending-domain/de-150",
+              "notify-me/sending-domain/deliverability"
+            ]
+          },
+          {
+            "group": "Customers",
+            "pages": [
+              "notify-me/subscribers"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "notify-me/integrations",
+              "notify-me/integrations/klaviyo",
+              "notify-me/integrations/mailchimp",
+              "notify-me/integrations/omnisend",
+              "notify-me/integrations/brevo"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "notify-me/settings"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "notify-me/troubleshooting",
+              "notify-me/button-not-showing",
+              "notify-me/emails-not-sending"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Wishlist",
+        "description": "Wishlist and save for later",
+        "icon": "heart",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "wishlist/index",
+              "wishlist/install"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "HustlePop",
+        "description": "Email popup",
+        "icon": "mail",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "hustlepop/index",
+              "hustlepop/install"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "/"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+  "redirects": [
+    {
+      "source": "/notify-me/dns-providers",
+      "destination": "/notify-me/sending-domain/dns-providers"
+    },
+    {
+      "source": "/notify-me/deliverability",
+      "destination": "/notify-me/sending-domain/deliverability"
     }
-  },
+  ],
   "contextual": {
     "options": [
       "copy",
@@ -61,12 +163,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

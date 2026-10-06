@@ -1,0 +1,62 @@
+---
+title: "Alerts did not send"
+sidebarTitle: "Emails not sending"
+description: "Why restock or price drop emails did not go out, and how to fix it."
+keywords: ["emails not sending", "alert", "Waiting", "bounce"]
+icon: "mail-x"
+---
+
+Notify Me only emails **Waiting** subscribers on that variant, and only when send rules pass. Check **Subscribers** first.
+
+<AccordionGroup>
+  <Accordion title="Nobody is Waiting on that variant">
+    **Cause:** No subscriber, or they already moved to Notified, Bounced, or Unsubscribed.
+
+    **Fix:** Confirm a **Waiting** row for that product and variant. If they already subscribed, the popup says they are registered. See [Subscribers](/notify-me/subscribers).
+  </Accordion>
+  <Accordion title="Stock is below the minimum">
+    **Cause:** **Minimum stock before sending alerts** is higher than the new quantity.
+
+    **Fix:** Add more units, or lower the threshold to `0` on the Back in stock widget. See [When alerts send](/notify-me/when-alerts-send).
+  </Accordion>
+  <Accordion title="Continue selling or untracked inventory">
+    **Cause:** Shopify continues selling at zero, or quantity tracking is off, and the matching notify checkboxes are off.
+
+    **Fix:** Match the inventory rules on the [Back in stock widget](/notify-me/back-in-stock-widget) to how those products are set in Shopify.
+  </Accordion>
+  <Accordion title="The product is draft or archived">
+    **Cause:** Alerts only send for **Active** products.
+
+    **Fix:** Set the product to Active in Shopify, then restock or drop the price again.
+  </Accordion>
+  <Accordion title="Custom domain is not verified">
+    **Cause:** Sender settings are incomplete, so the alert cannot leave.
+
+    **Fix:** Finish DNS and **Check verification**, then save **Sent from Name**. See [Add a custom domain](/notify-me/sending-domain/add-domain).
+  </Accordion>
+  <Accordion title="DE_150 — Antispam validation failed">
+    **Cause:** **Register domain** returned **DE_150**: *Antispam validation failed for your domain in Accounts.* The domain failed the anti-spam check, so Notify Me cannot add it.
+
+    **Fix:** Email [support@oneclickez.com](mailto:support@oneclickez.com) with the domain you tried to add. Do not keep retrying the same domain. Alerts keep using the default Notify Me sender until this is cleared. See [DE_150 anti-spam check](/notify-me/sending-domain/de-150).
+  </Accordion>
+  <Accordion title="This is a development store">
+    **Cause:** Shopify development stores cannot send alert emails. The app shows a banner.
+
+    **Fix:** Test widgets and subscribers here. Send live alerts from a paid or transfer store.
+  </Accordion>
+  <Accordion title="The subscriber bounced">
+    **Cause:** The mail provider rejected the address. Status is **Bounced**.
+
+    **Fix:** They will not get further alerts to that address. Ask them to subscribe with a deliverable email.
+  </Accordion>
+  <Accordion title="The usage meter shows sending paused">
+    **Cause:** This month or today is at the cap on **Settings**.
+
+    **Fix:** Wait until the next UTC day or month. See [Settings](/notify-me/settings).
+  </Accordion>
+  <Accordion title="Price did not go down">
+    **Cause:** Price drop alerts need a strictly lower price than at signup. Compare-at alone does not send.
+
+    **Fix:** Lower the variant price in Shopify. See [When alerts send](/notify-me/when-alerts-send).
+  </Accordion>
+</AccordionGroup>

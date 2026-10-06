@@ -1,0 +1,45 @@
+---
+title: "Add a custom domain"
+description: "Register your domain in Settings, add DNS records, and verify so alerts send from your brand."
+keywords: ["custom domain", "Register domain", "DKIM", "sender"]
+icon: "circle-plus"
+---
+
+By default, alerts send from `alerts@notify.hustlepops.com` with the name **Notify Me**. Add a custom domain in **Settings** to send from your brand.
+
+<Frame>
+  ![Settings email section with sender name and custom domain](/images/notify-me/settings-email.png)
+</Frame>
+
+<Steps>
+  <Step title="Add a custom domain">
+    Go to **Settings**, choose **Add a custom domain**, enter the domain only (for example `yourstore.com`), then **Register domain**. Do not enter an email address, URL, or `www`.
+  </Step>
+  <Step title="Add DNS records">
+    Open **View DNS records**. Add the DKIM **TXT** record and the bounce **CNAME** at your domain provider. Use the Host field exactly as shown. Do not append your domain again if your provider adds it automatically.
+
+    Pick your provider and follow the steps: [Cloudflare, GoDaddy, Shopify, and more](/notify-me/sending-domain/dns-providers).
+  </Step>
+  <Step title="Check verification">
+    Propagation can take up to 48 hours. Choose **Check verification** until the domain shows as verified.
+  </Step>
+  <Step title="Set the sender name">
+    After the domain is verified, edit **Sent from Name** and the local part of the sender email, then save.
+  </Step>
+</Steps>
+
+<Frame>
+  ![DNS records modal with DKIM and bounce CNAME](/images/notify-me/dns-records.png)
+</Frame>
+
+<Warning>
+  You cannot change the sender email until the domain is verified. Until then, alerts keep using the default Notify Me sender.
+</Warning>
+
+If **Register domain** fails with **DE_150**, see [DE_150 anti-spam check](/notify-me/sending-domain/de-150). Do not keep retrying the same domain.
+
+<Note>
+  Shopify development stores cannot register a custom domain or send alert emails.
+</Note>
+
+After the domain is verified, see [Deliverability best practices](/notify-me/sending-domain/deliverability) for bounce, open, and click hygiene.

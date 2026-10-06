@@ -1,0 +1,352 @@
+---
+title: "Add DNS records"
+sidebarTitle: "DNS providers"
+description: "Where to add the DKIM TXT and bounce CNAME for your Notify Me sending domain."
+keywords: ["DNS", "Cloudflare", "GoDaddy", "Namecheap", "Shopify", "DKIM", "CNAME"]
+icon: "server"
+---
+
+Open **Settings** in Notify Me, choose **View DNS records**, and copy **Host** and **Value** for both rows: the DKIM **TXT** and the bounce **CNAME**. Then pick your provider.
+
+<Info>
+  Paste **Host** exactly as Notify Me shows it. Most providers already append your domain. If Host is `@`, that is the root of the domain. Do not delete the A or CNAME records that point your shop to Shopify.
+</Info>
+
+## Pick your provider
+
+<Columns cols={3}>
+  <Card title="Cloudflare" icon="cloud" href="#cloudflare" arrow>
+    DNS → Records
+  </Card>
+  <Card title="GoDaddy" icon="globe" href="#godaddy" arrow>
+    My Products → DNS
+  </Card>
+  <Card title="Namecheap" icon="badge-percent" href="#namecheap" arrow>
+    Domain List → Advanced DNS
+  </Card>
+  <Card title="Shopify" icon="store" href="#shopify" arrow>
+    Settings → Domains
+  </Card>
+  <Card title="Squarespace" icon="layout-dashboard" href="#squarespace" arrow>
+    Also former Google Domains
+  </Card>
+  <Card title="Amazon Route 53" icon="cloud-cog" href="#amazon-route-53" arrow>
+    Hosted zones
+  </Card>
+  <Card title="Hostinger" icon="server" href="#hostinger" arrow>
+    hPanel → DNS Zone
+  </Card>
+  <Card title="Bluehost" icon="house" href="#bluehost" arrow>
+    Zone Editor
+  </Card>
+  <Card title="IONOS" icon="building-2" href="#ionos" arrow>
+    Domains → DNS
+  </Card>
+  <Card title="Name.com" icon="tag" href="#name-com" arrow>
+    Manage DNS Records
+  </Card>
+  <Card title="Porkbun" icon="piggy-bank" href="#porkbun" arrow>
+    Domain Management → DNS
+  </Card>
+  <Card title="Hover" icon="mouse-pointer-2" href="#hover" arrow>
+    Domains → DNS
+  </Card>
+  <Card title="Domain.com" icon="link" href="#domain-com" arrow>
+    DNS & Nameservers
+  </Card>
+  <Card title="Wix" icon="app-window" href="#wix" arrow>
+    Settings → Domains
+  </Card>
+  <Card title="Network Solutions" icon="network" href="#network-solutions" arrow>
+    Advanced DNS
+  </Card>
+</Columns>
+
+## Cloudflare {#cloudflare}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS">
+    Log in to [Cloudflare](https://dash.cloudflare.com), select the domain, then go to **DNS** → **Records**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Name** from Host and **Content** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Name** from Host and **Target** from Value. Set **Proxy status** to **DNS only** (gray cloud), then save. Do not use the orange proxied cloud.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## GoDaddy {#godaddy}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS">
+    Log in to [GoDaddy](https://www.godaddy.com), open **My Products**, and choose **DNS** next to the domain.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add New Record**. Set **Type** to **TXT**. Paste **Name** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add New Record**. Set **Type** to **CNAME**. Paste **Name** from Host and **Value** / **Points to** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Namecheap {#namecheap}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open Advanced DNS">
+    Log in to [Namecheap](https://www.namecheap.com), go to **Domain List**, choose **Manage** on the domain, then **Advanced DNS**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add New Record**. Set **Type** to **TXT Record**. Paste **Host** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add New Record**. Set **Type** to **CNAME Record**. Paste **Host** from Host and **Target** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Shopify {#shopify}
+
+Use this only if you bought the domain through Shopify or transferred it to Shopify. If the domain still lives at Cloudflare or GoDaddy, add records there instead.
+
+<Steps>
+  <Step title="Open DNS settings">
+    In Shopify admin, go to **Settings** → **Domains**. Select the domain, then **DNS settings** (or **Manage**).
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add custom record** → **TXT**. Paste **Name** from Host and **TXT value** from Value. Confirm.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add custom record** → **CNAME**. Paste **Name** from Host and **Points to** from Value. Confirm. Do not edit the default `www` CNAME that points the storefront to Shopify.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Squarespace {#squarespace}
+
+Use this if the domain is on Squarespace, including domains moved from Google Domains.
+
+<Steps>
+  <Step title="Open DNS settings">
+    Log in to [Squarespace](https://www.squarespace.com), go to **Settings** → **Domains**, select the domain, then **DNS Settings**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Host** from Host and **Data** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Host** from Host and **Data** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Amazon Route 53 {#amazon-route-53}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open the hosted zone">
+    In the [AWS console](https://console.aws.amazon.com/route53), go to **Route 53** → **Hosted zones**, then open the zone for your domain.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Create record**. Set **Record type** to **TXT**. Paste **Record name** from Host and **Value** from Value. Create record.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Create record**. Set **Record type** to **CNAME**. Paste **Record name** from Host and **Value** from Value. Create record.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Hostinger {#hostinger}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS Zone">
+    Log in to [hPanel](https://hpanel.hostinger.com), go to **Domains**, select the domain, then **DNS** / **DNS Zone Editor**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Name** from Host and **TXT value** from Value. Add record.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Name** from Host and **Target** / **Points to** from Value. Add record.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Bluehost {#bluehost}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open the Zone Editor">
+    Log in to [Bluehost](https://www.bluehost.com), go to **Domains**, select the domain, then **DNS** or **Zone Editor**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Add a **TXT** record. Paste **Host** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Add a **CNAME** record. Paste **Host** from Host and **Points to** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## IONOS {#ionos}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS">
+    Log in to [IONOS](https://www.ionos.com), go to **Domains & SSL**, select the domain, then **DNS**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Host name** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Host name** from Host and **Points to** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Name.com {#name-com}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS records">
+    Log in to [Name.com](https://www.name.com), open the domain, then **Manage DNS Records**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add Record**. Set **Type** to **TXT**. Paste **Host** from Host and **Answer** / **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add Record**. Set **Type** to **CNAME**. Paste **Host** from Host and **Answer** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Porkbun {#porkbun}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS">
+    Log in to [Porkbun](https://porkbun.com), go to **Domain Management**, then **DNS** on the domain.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Set **Type** to **TXT**. Paste **Host** from Host and **Answer** from Value. Choose **Add**.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Set **Type** to **CNAME**. Paste **Host** from Host and **Answer** from Value. Choose **Add**.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Hover {#hover}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS">
+    Log in to [Hover](https://www.hover.com), go to **Domains**, select the domain, then **DNS**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add a record**. Set **Type** to **TXT**. Paste **Hostname** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add a record**. Set **Type** to **CNAME**. Paste **Hostname** from Host and **Target** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Domain.com {#domain-com}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open DNS records">
+    Log in to [Domain.com](https://www.domain.com), open the domain, then **DNS & Nameservers** → **DNS Records**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Name** from Host and **Content** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Name** from Host and **Content** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Wix {#wix}
+
+Use this only if Wix hosts DNS for the domain (Wix nameservers). If you connected a domain that still uses Cloudflare or GoDaddy nameservers, add the records there.
+
+<Steps>
+  <Step title="Open domain DNS">
+    In [Wix](https://www.wix.com), go to **Settings** → **Domains**, select the domain, then **Manage DNS Records**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    Choose **Add record**. Set **Type** to **TXT**. Paste **Host name** from Host and **Value** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    Choose **Add record**. Set **Type** to **CNAME**. Paste **Host name** from Host and **Value** from Value. Save. Leave the storefront `www` record alone.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+## Network Solutions {#network-solutions}
+
+Add both records from **View DNS records**.
+
+<Steps>
+  <Step title="Open Advanced DNS">
+    Log in to [Network Solutions](https://www.networksolutions.com), go to **Account Manager** → **My Domain Names**, select the domain, then **Advanced DNS**.
+  </Step>
+  <Step title="Add the DKIM TXT">
+    In **Text (TXT Records)**, choose **Add TXT Record**. Paste **Host** from Host and **Text** from Value. Save.
+  </Step>
+  <Step title="Add the bounce CNAME">
+    In **CNAME Records**, choose **Add CNAME Record**. Paste **Alias** / **Host** from Host and **Other Host** from Value. Save.
+  </Step>
+  <Step title="Verify in Notify Me">
+    Back in Notify Me, choose **Check verification**.
+  </Step>
+</Steps>
+
+<Note>
+  DNS can take up to 48 hours. If your provider is not listed, look for **DNS**, **DNS Zone**, or **Advanced DNS**, then add a **TXT** and a **CNAME** with the Host and Value from Notify Me. Email [support@oneclickez.com](mailto:support@oneclickez.com) if you are stuck.
+</Note>

@@ -1,0 +1,59 @@
+---
+title: "Back in stock widget"
+description: "Customize the Notify me trigger, targeting, inventory rules, and publish the widget."
+keywords: ["back in stock", "widget", "trigger", "inventory rules"]
+icon: "package"
+---
+
+The **Back in stock** widget shows a **Notify me** trigger when a variant is unavailable. Shoppers open the [popup](/notify-me/popup), subscribe, and wait for a restock [alert](/notify-me/when-alerts-send).
+
+<Steps>
+  <Step title="Open the widget">
+    Go to **Widgets**, keep **Back in stock** **ON**, and choose **Customize**.
+  </Step>
+  <Step title="Set the trigger">
+    On the **Trigger** tab, set label, colors, and where the button appears.
+  </Step>
+  <Step title="Publish">
+    Choose **Publish**. A draft does not update the storefront.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Back in stock widget editor Trigger tab](/images/notify-me/back-in-stock-trigger.png)
+</Frame>
+
+## Where to show
+
+On the **Trigger** tab, under **Where to show**:
+
+- **Only show on out-of-stock variants** — hides the trigger when the variant is in stock. Leave this on for most stores.
+- **Show on collection, search & product listing pages** — adds the trigger on product cards in grids.
+- **Replace Sold Out button with Notify Me** — swaps your theme's sold-out add-to-cart control for the Notify me trigger (inline trigger only). When off, Notify me sits below the buy buttons.
+
+## Products and collections
+
+Use **Products & collections** to include or exclude products and collections. If you add includes, the widget only appears on those products or collection members. Excludes always win.
+
+## Inventory rules
+
+Most stores leave these off except the stock threshold.
+
+<Frame>
+  ![Inventory rules on the Back in stock Trigger tab](/images/notify-me/inventory-rules.png)
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Minimum stock before sending alerts">
+    Wait until at least this many units are back before emailing subscribers. Use `0` to alert on any restock.
+  </Accordion>
+  <Accordion title="Show button when shoppers can still buy at zero stock">
+    Turn this on if some products stay purchasable at 0 stock in Shopify (**Continue selling when out of stock**) but you still want signups.
+  </Accordion>
+  <Accordion title="Send alerts for products that do not track quantity">
+    Shopify may not update stock reliably when quantity tracking is off. Leave this off unless you know you need it.
+  </Accordion>
+  <Accordion title="Send alerts for products that allow buying at zero stock">
+    Restock emails for continue-selling products are usually unnecessary. Turn this on only if you still want alerts when inventory comes back.
+  </Accordion>
+</AccordionGroup>

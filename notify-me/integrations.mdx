@@ -1,0 +1,70 @@
+---
+title: "Introduction"
+sidebarTitle: "Introduction"
+description: "Connect Klaviyo, Mailchimp, Omnisend, or Brevo so subscribers and alerts sync as contacts and events."
+keywords: ["integrations", "Klaviyo", "Mailchimp", "Omnisend", "Brevo", "API key"]
+icon: "plug"
+---
+
+Integrations connect Notify Me to your email platform. Notify Me still sends the restock and price drop **alerts**. The platform receives the **subscriber** as a contact and an **event**, so you can run your own automations.
+
+<Warning>
+  Connecting an integration does not send the Notify Me alert for you. Keep [alert emails](/notify-me/edit-alert-emails) published in Notify Me.
+</Warning>
+
+## Where to find Integrations
+
+Open **Integrations** in the Notify Me left nav, next to Widgets, Automations, Subscribers, and Settings.
+
+<Frame>
+  ![Notify Me Integrations page with Klaviyo, Mailchimp, Omnisend, and Brevo cards](/images/notify-me/integrations.png)
+</Frame>
+
+Each card shows **Connect**. After you save a key, the card shows **Active** (or **Inactive** if you paused sync) and the button becomes **Manage**.
+
+Need a tool that is not listed? Use **Need a custom integration? Contact us** on this page to open chat.
+
+## What syncs
+
+When the connection is **Active**:
+
+1. A shopper becomes a **subscriber** — Notify Me upserts the contact and records a join event.
+2. Notify Me sends a **back in stock** or **price drop** alert — the platform records that event on the contact.
+
+You pick a list, audience, or tag when you connect. That is where new contacts land.
+
+## Connect an integration
+
+<Steps>
+  <Step title="Create an API key">
+    Open the page for your platform and create a key there: [Klaviyo](/notify-me/integrations/klaviyo), [Mailchimp](/notify-me/integrations/mailchimp), [Omnisend](/notify-me/integrations/omnisend), or [Brevo](/notify-me/integrations/brevo).
+  </Step>
+  <Step title="Choose Connect">
+    In Notify Me, open **Integrations** and choose **Connect** on that card.
+  </Step>
+  <Step title="Paste the key and test">
+    Paste the API key, choose **Test**, then pick the list, audience, or tag.
+  </Step>
+  <Step title="Save">
+    Choose **Save**. The card shows **Active**.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Connect modal with API key, Test, and list picker](/images/notify-me/integrations-connect-modal.png)
+</Frame>
+
+<Columns cols={2}>
+  <Card title="Klaviyo" icon="mail" href="/notify-me/integrations/klaviyo" arrow>
+    Private API key, then pick a list.
+  </Card>
+  <Card title="Mailchimp" icon="inbox" href="/notify-me/integrations/mailchimp" arrow>
+    API key, then pick an audience.
+  </Card>
+  <Card title="Omnisend" icon="send" href="/notify-me/integrations/omnisend" arrow>
+    API key, then pick a tag.
+  </Card>
+  <Card title="Brevo" icon="megaphone" href="/notify-me/integrations/brevo" arrow>
+    API key, then pick a list.
+  </Card>
+</Columns>
